@@ -25,7 +25,10 @@
        ;show line and column number
        :ruler true
        ;makes signcolumn always one column with signs and linenumber
-       :signcolumn "number"}]
+       :signcolumn "number"
+       :foldmethod "expr"
+       :foldexpr "v:lua.vim.treesitter.foldexpr()" 
+       }]
   (each [option value (pairs options)]
     (core.assoc vim.o option value)))
 
